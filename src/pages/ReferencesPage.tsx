@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 import { BookOpen, ExternalLink, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -135,12 +136,13 @@ const ReferencesPage = () => {
                       <td className="px-6 py-4">
                         <div className="flex gap-2">
                           {topic.lectures.map((num) => (
-                            <span
+                            <Link
                               key={num}
-                              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-medium"
+                              to={`/lecture/${num}`}
+                              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
                             >
                               {num}
-                            </span>
+                            </Link>
                           ))}
                         </div>
                       </td>
