@@ -26,9 +26,7 @@ const Header = () => {
         {/* Top bar with instructor info */}
         <div className="flex items-center justify-between py-3 border-b border-border/50">
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground">
-              <GraduationCap className="w-6 h-6" />
-            </div>
+            <img src="/iaet-edu-net.png" alt="IAET Logo" className="hidden sm:block h-12 w-12" />
             <div>
               <h1 className="text-lg sm:text-xl font-bold text-foreground">
                 {t('site.title')}
