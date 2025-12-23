@@ -9,6 +9,7 @@ const ReferencesPage = () => {
 
   const references = [
     {
+      id: '1',
       title: language === 'ar' 
         ? 'القياسات والأجهزة الإلكترونية' 
         : 'Measurement and Electronic Instrumentation',
@@ -20,6 +21,7 @@ const ReferencesPage = () => {
         : 'A comprehensive reference covering measurement fundamentals, transducers, electronic circuits, and modern instrumentation systems.',
     },
     {
+      id: '2',
       title: language === 'ar'
         ? 'نظرية وتطبيقات القياسات والأجهزة'
         : 'Measurements and Instrumentation Theory and Application',
@@ -72,13 +74,13 @@ const ReferencesPage = () => {
             </h2>
             <div className="space-y-4">
               {references.map((ref, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="card-elevated p-6"
-                >
+                <Link to={`/reference/${ref.id}`} key={ref.id}>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="card-elevated p-6 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer"
+                  >
                   <div className="flex flex-col md:flex-row md:items-start gap-4">
                     <div className="flex-shrink-0 w-16 h-20 bg-primary/10 rounded-lg flex items-center justify-center">
                       <BookOpen className="w-8 h-8 text-primary" />
@@ -98,7 +100,8 @@ const ReferencesPage = () => {
                       </span>
                     </div>
                   </div>
-                </motion.div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </section>
