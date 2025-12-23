@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage";
 import LecturesPage from "./pages/LecturesPage";
 import LectureDetailPage from "./pages/LectureDetailPage";
 import ReferencesPage from "./pages/ReferencesPage";
+import ReferenceDetailPage from "./pages/ReferenceDetailPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
                 <Route path="/lectures" element={<LecturesPage />} />
                 <Route path="/lecture/:id" element={<LectureDetailPage />} />
                 <Route path="/references" element={<ReferencesPage />} />
+                <Route path="/reference/:id" element={<ReferenceDetailPage />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
