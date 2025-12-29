@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
-import { GraduationCap, BookOpen, Home, Languages, Menu, X } from 'lucide-react';
+import { GraduationCap, BookOpen, Home, Languages, Menu, X, FileQuestion } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -17,6 +17,7 @@ const Header = () => {
   const navItems = [
     { path: '/', label: t('nav.home'), icon: Home },
     { path: '/lectures', label: t('nav.lectures'), icon: BookOpen },
+    { path: '/exams', label: t('nav.exams'), icon: FileQuestion },
     { path: '/references', label: t('nav.references'), icon: GraduationCap },
   ];
 
