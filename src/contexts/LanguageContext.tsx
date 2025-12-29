@@ -41,6 +41,10 @@ const translations: Record<string, Record<Language, string>> = {
     ar: 'المراجع',
     en: 'References',
   },
+  'nav.exams': {
+    ar: 'الامتحانات',
+    en: 'Exams',
+  },
   
   // Home page
   'home.hero.title': {

@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import HomePage from "./pages/HomePage";
 import LecturesPage from "./pages/LecturesPage";
 import LectureDetailPage from "./pages/LectureDetailPage";
+import ExamsPage from "./pages/ExamsPage";
 import ReferencesPage from "./pages/ReferencesPage";
 import ReferenceDetailPage from "./pages/ReferenceDetailPage";
 import NotFound from "./pages/NotFound";
@@ -29,6 +30,7 @@ const App = () => (
                 <Route path="/" element={<HomePage />} />
                 <Route path="/lectures" element={<LecturesPage />} />
                 <Route path="/lecture/:id" element={<LectureDetailPage />} />
+                <Route path="/exams" element={<ExamsPage />} />
                 <Route path="/references" element={<ReferencesPage />} />
                 <Route path="/reference/:id" element={<ReferenceDetailPage />} />
                 <Route path="*" element={<NotFound />} />
