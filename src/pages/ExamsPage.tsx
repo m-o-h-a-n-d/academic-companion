@@ -423,8 +423,8 @@ const questions: Question[] = [
     id: 26,
     category: 'theory',
     question: { 
-        ar: 'تفريعة أنواع المحولات (كما في المخطط اليدوي)', 
-        en: 'Detailed Classification of Transducers (Handwritten Diagram)' 
+        ar: 'تفريعة أنواع المحولات', 
+        en: 'Detailed Classification of Transducers ' 
     },
     answer: { 
         ar: [
