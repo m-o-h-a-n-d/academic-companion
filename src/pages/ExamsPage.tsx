@@ -422,20 +422,37 @@ const questions: Question[] = [
   {
     id: 26,
     category: 'theory',
-    question: { ar: 'أنواع المحولات (Types of Transducers)', en: 'Types of Transducers' },
+    question: { 
+        ar: 'تفريعة أنواع المحولات (كما في المخطط اليدوي)', 
+        en: 'Detailed Classification of Transducers (Handwritten Diagram)' 
+    },
     answer: { 
-      ar: [
-        '1. Self-generators (Active): مولدات ذاتية، تحول الطاقة (إشعاعية، ميكانيكية، حرارية) مباشرة إلى إشارة كهربائية (جهد أو شحنة) ولا تحتاج لمصدر طاقة خارجي. [أمثلة: الخلايا الشمسية Solar cells، المزدوج الحراري Thermocouples، البيزوكهرباء Piezoelectric].\n',
-        '2. Modulators (Passive): معدّلات، تحتاج لمصدر طاقة خارجي لتعمل، وتقوم بتغيير خصائص الدائرة (مقاومة، ممانعة) استجابة للمؤثر الفيزيائي. [أمثلة: مقياس الانفعال Strain gauges، الثيرمستور Thermistors، مجسات Hall effect].\n',
-        '3. Modifiers: مُغيّرات، تقوم بتحويل شكل من أشكال الطاقة إلى شكل آخر (غالباً ميكانيكي) تمهيداً لقياسه، أو تعديل الإشارة الكهربائية نفسها. [أمثلة: الأغشية Diaphragms (تحول الضغط إلى إزاحة)، المكبرات Amplifiers، والمرشحات Filters].\n'
-      ],
-      en: [
-        '1. Self-generators (Active): Convert energy (radiant, mechanical, thermal) directly into electrical output without external power. [e.g., Solar cells, Thermocouples, Piezoelectric transducers].\n',
-        '2. Modulators (Passive): Require external power; they modulate electrical parameters (resistance, impedance) in response to physical effects. [e.g., Strain gauges, Thermistors, Hall effect probes].\n',
-        '3. Modifiers: Convert one form of energy to another (e.g., pressure to displacement) or modify the electrical signal itself. [e.g., Diaphragms, Orifice plates, Amplifiers, Filters].\n'
-      ]
+        ar: [
+            '1. Bridges (القناطر): Wheatstone bridge -> تنقسم إلى DC bridges و AC bridges.\n',
+            '2. Amplifiers (المكبرات).\n',
+            '3. Inductive (الحثية): Electrical displacement transducers / Inductive displacement transducers.\n',
+            '4. Strain (الانفعال): تنقسم إلى: Linear (خطي), Rosette (تجميعي), Torque (عزم), Diaphragm (غشاء).\n',
+            '5. Temperature (الحرارة): Resistive devices (أجهزة مقاومة) / Thermoelectric devices (أجهزة كهرواحـرارية).\n',
+            '6. Ultrasonic (فوق صوتية).\n',
+            '7. Radiation Thermometers (مقاييس الإشعاع الحراري): Optical pyrometer / Radiation pyrometers.\n',
+            '8. Thermography (التصوير الحراري).\n',
+            '9. Quartz Thermometers (مقاييس كوارتز).\n',
+            '10. Fiber Optic Temp Sensors (ألياف ضوئية): Intrinsic sensor / Extrinsic sensor.\n'
+        ],
+        en: [
+            '1. Bridges: Wheatstone bridge -> DC bridges & AC bridges.\n',
+            '2. Amplifiers.\n',
+            '3. Inductive: Electrical displacement transducers & Inductive displacement transducers.\n',
+            '4. Strain: Linear, Rosette, Torque, Diaphragm.\n',
+            '5. Temperature: Resistive devices & Thermoelectric devices.\n',
+            '6. Ultrasonic.\n',
+            '7. Radiation Thermometers: Optical pyrometer & Radiation pyrometers.\n',
+            '8. Thermography.\n',
+            '9. Quartz Thermometers.\n',
+            '10. Fiber Optic Temperature Sensors: Intrinsic sensor & Extrinsic sensor.\n'
+        ]
     }
-  },
+},
   // 27. Transducers for length
   {
     id: 27,
