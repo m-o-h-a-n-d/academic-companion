@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -54,24 +54,12 @@
     --gold: 38 80% 55%;
     --success: 142 70% 45%;
     --info: 205 80% 55%;
-
+    
     /* Gradients */
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(210 60% 25%) 0%,
-      hsl(210 45% 35%) 100%
-    );
-    --gradient-secondary: linear-gradient(
-      135deg,
-      hsl(174 60% 45%) 0%,
-      hsl(174 55% 55%) 100%
-    );
-    --gradient-hero: linear-gradient(
-      180deg,
-      hsl(210 20% 98%) 0%,
-      hsl(210 25% 94%) 100%
-    );
-
+    --gradient-primary: linear-gradient(135deg, hsl(210 60% 25%) 0%, hsl(210 45% 35%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(174 60% 45%) 0%, hsl(174 55% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 25% 94%) 100%);
+    
     /* Shadows */
     --shadow-sm: 0 2px 8px -2px hsl(210 60% 25% / 0.08);
     --shadow-md: 0 8px 24px -4px hsl(210 60% 25% / 0.12);
@@ -126,20 +114,15 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Cairo", sans-serif;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
   }
 
   html[dir="ltr"] body {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Source Serif 4", serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Serif 4', serif;
     @apply font-semibold tracking-tight;
   }
 
@@ -149,7 +132,7 @@
   html[dir="rtl"] h4,
   html[dir="rtl"] h5,
   html[dir="rtl"] h6 {
-    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
     @apply font-bold;
   }
 
@@ -159,7 +142,7 @@
   html[dir="ltr"] h4,
   html[dir="ltr"] h5,
   html[dir="ltr"] h6 {
-    font-family: "Source Serif 4", serif;
+    font-family: 'Source Serif 4', serif;
     @apply font-semibold tracking-tight;
   }
 }
