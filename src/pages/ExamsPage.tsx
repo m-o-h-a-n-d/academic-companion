@@ -16,6 +16,7 @@ import {
 
 // --- استيراد الصور ---
 import wienBridge from '@/assets/circuits/weinbridge.png';
+import compare from '@/assets/circuits/compare.png';
 import crtDiagram from '@/assets/circuits/crt-diagram.png';
 import frequencyMeter from '@/assets/circuits/frequency-meter.png';
 import frequencyMeterExplain from '@/assets/circuits/frequency-meter-e.png';
@@ -35,6 +36,7 @@ import inductive from '@/assets/circuits/inductive.png';
 import single from '@/assets/circuits/singleTrac.png';
 import Dupel from '@/assets/circuits/Dupel.png';
 import basic from '@/assets/circuits/basic.png';
+import Storage from '@/assets/circuits/StorageSystem.png';
 
 // Calc Images
 import calc1 from "@/assets/calculations/calc1.png";
@@ -75,49 +77,59 @@ interface Question {
 
 // --- Data ---
 const questions: Question[] = [
-  // 1. Types of DVM
+  // 1. Comparison of Analog and Digital Instruments (New ID: 1)
   {
     id: 1,
     category: 'theory',
-    question: { ar: 'أنواع أجهزة قياس الجهد الرقمية (Types of DVM)', en: 'Types of DVM' },
+    question: { 
+      ar: 'قارن بين الأجهزة التناظرية والرقمية (Comparison of Analog and Digital Instruments)؟', 
+      en: 'Comparison of Analog and Digital Instruments?' 
+    },
+    answer: {slides : [ compare]}
+  },
+  // 2. Types of DVM (Old ID: 1 -> New ID: 2)
+  {
+    id: 2,
+    category: 'theory',
+    question: { ar: 'اذكر أنواع أجهزة قياس الجهد الرقمية (Types of DVM)؟', en: 'List the Types of DVM?' },
     answer: {
       ar: '1. Ramp-type DVM\n2. Dual Slope Integrating DVM\n3. Continuous Balance DVM\n4. Successive Approximation DVM',
       en: '1. Ramp-type DVM\n2. Dual Slope Integrating DVM\n3. Continuous Balance DVM\n4. Successive Approximation DVM'
     }
   },
-  // 2. Block diagram of ramp-type DVM
-  {
-    id: 2,
-    category: 'circuit',
-    question: { ar: 'المخطط الصندوقي لـ Ramp-type DVM', en: 'Block diagram of Ramp-type DVM' },
-    answer: { slides: [rampTypeDvm] }
-  },
-  // 3. Signal frequency definition
+  // 3. Block diagram of ramp-type DVM (Old ID: 2 -> New ID: 3)
   {
     id: 3,
+    category: 'circuit',
+    question: { ar: 'ارسم المخطط الصندوقي لـ Ramp-type DVM؟', en: 'Draw the Block diagram of Ramp-type DVM?' },
+    answer: { slides: [rampTypeDvm] }
+  },
+  // 4. Signal frequency definition (Old ID: 3 -> New ID: 4)
+  {
+    id: 4,
     category: 'theory',
-    question: { ar: 'تعريف تردد الإشارة (Signal Frequency)', en: 'Define Signal Frequency' },
+    question: { ar: 'ما هو تعريف تردد الإشارة (Signal Frequency)؟', en: 'Define Signal Frequency?' },
     answer: {
       ar: 'هو عدد مرات تكرار حدث معين لكل وحدة زمنية = عدد دورات الإشارة في الثانية الواحدة.',
       en: 'The number of occurrences of a repeating event per unit time = Number of signal cycles per one second.'
     }
   },
-  // 4. Digital Frequency Meter (DFM)
+  // 5. Digital Frequency Meter (DFM) (Old ID: 4 -> New ID: 5)
   {
-    id: 4,
+    id: 5,
     category: 'circuit',
-    question: { ar: 'عداد التردد الرقمي (DFM) (رسم + شرح)', en: 'Digital Frequency Meter (DFM) (Diagram + Explanation)' },
+    question: { ar: 'اشرح مع الرسم عداد التردد الرقمي (DFM)؟', en: 'Explain Digital Frequency Meter (DFM) with Diagram?' },
     answer: { 
       slides: [frequencyMeter, frequencyMeterExplain],
       ar: 'يقوم بعد نبضات الإشارة المجهولة خلال فترة زمنية محددة بدقة (Gate Time).',
       en: 'Counts the pulses of the unknown signal during a precisely determined time interval (Gate Time).'
     }
   },
-  // 5. Function of time base
+  // 6. Function of time base (Old ID: 5 -> New ID: 6)
   {
-    id: 5,
+    id: 6,
     category: 'theory',
-    question: { ar: 'وظيفة قاعدة الزمن (Function of Time Base)', en: 'Function of Time Base' },
+    question: { ar: 'ما هي وظيفة قاعدة الزمن (Function of Time Base)؟', en: 'What is the Function of Time Base?' },
     answer: {
       ar: [
         '1. توفير مصدر توقيت دقيق (Accurate timing source) بتردد ثابت (مثل 1KHz).',
@@ -131,11 +143,11 @@ const questions: Question[] = [
       ]
     }
   },
-  // 6. Low frequency generation types
+  // 7. Low frequency generation types (Old ID: 6 -> New ID: 7)
   {
-    id: 6,
+    id: 7,
     category: 'theory',
-    question: { ar: 'أنواع توليد الإشارات (Signal Generation Types)', en: 'Types of Signal Generation' },
+    question: { ar: 'ما هي أنواع توليد الإشارات (Types of Signal Generation)؟', en: 'What are the Types of Signal Generation?' },
     answer: {
       ar: [
         '1. Low Frequency (LF) sine wave generators.',
@@ -153,11 +165,11 @@ const questions: Question[] = [
       ]
     }
   },
-  // 7. Wien bridge
+  // 8. Wien bridge (Old ID: 7 -> New ID: 8)
   {
-    id: 7,
+    id: 8,
     category: 'circuit',
-    question: { ar: 'كيفية تغيير وضبط التردد في قنطرة وين (مع الرسم)', en: 'Frequency Range & Adjustment in Wien Bridge (with diagram)' },
+    question: { ar: 'كيف يتم تغيير وضبط التردد في قنطرة وين (مع الرسم)؟', en: 'How to adjust Frequency Range in Wien Bridge (with diagram)?' },
     answer: {
       slides: [wienBridge],
       ar: [
@@ -172,21 +184,21 @@ const questions: Question[] = [
       ]
     }
   },
-  // 8. Adjustment Frequency & Amplitude
+  // 9. Adjustment Frequency & Amplitude (Old ID: 8 -> New ID: 9)
   {
-    id: 8,
+    id: 9,
     category: 'theory',
-    question: { ar: 'مبادئ ضبط التردد والسعة (Adjustment Frequency & Amplitude)', en: 'Adjustment Frequency & Amplitude' },
+    question: { ar: 'اذكر مبادئ ضبط التردد والسعة (Adjustment Frequency & Amplitude)؟', en: 'State principles of Adjustment Frequency & Amplitude?' },
     answer: {
       ar: 'التردد: يضبط عبر عناصر المذبذب (R, C أو L, C). السعة: تضبط عبر مكبر الخرج (Output Amplifier) أو مقسم الجهد (Attenuator).',
       en: 'Frequency: Adjusted via oscillator components (R, C or L, C). Amplitude: Adjusted via Output Amplifier or Attenuator.'
     }
   },
-  // 9. Amplitude Control R2, R3
+  // 10. Amplitude Control R2, R3 (Old ID: 9 -> New ID: 10)
   {
-    id: 9,
+    id: 10,
     category: 'theory',
-    question: { ar: 'التحكم في السعة ووظيفة R2, R3 (Amplitude Control) ', en: 'Control for Amplitude & Job of R2, R3 in sine wave generator ' },
+    question: { ar: 'كيف يتم التحكم في السعة وما وظيفة R2, R3؟', en: 'How to Control Amplitude and what is the job of R2, R3?' },
     answer: {
       ar: [
         '1. R2, R3: يشكلان مقسم جهد (Potential Divider) لتوهين خرج المذبذب.',
@@ -201,22 +213,22 @@ const questions: Question[] = [
       slides: [amplitude]
     }
   },
-  // 10. Function Generator Diagram
+  // 11. Function Generator Diagram (Old ID: 10 -> New ID: 11)
   {
-    id: 10,
+    id: 11,
     category: 'circuit',
-    question: { ar: 'رسمة مولد الوظائف (Function Generator Diagram)', en: 'Function Generator Diagram' },
+    question: { ar: 'ارسم مخطط مولد الوظائف (Function Generator Diagram)؟', en: 'Draw Function Generator Diagram?' },
     answer: { 
       slides: [functionGenerator],
       ar: 'يولد موجات: جيبية (Sine)، مربعة (Square)، ومثلثة (Triangular).',
       en: 'Generates: Sine, Square, and Triangular waves.'
     }
   },
-  // 11. RF Signal Generator
+  // 12. RF Signal Generator (Old ID: 11 -> New ID: 12)
   {
-    id: 11,
+    id: 12,
     category: 'circuit',
-    question: { ar: 'المخطط الصندوقي لـ RF Signal Generator ووظيفة كل جزء', en: 'Block diagram of RF Signal Generator + Block Functions' },
+    question: { ar: 'ارسم المخطط الصندوقي لـ RF Signal Generator مع ذكر وظيفة كل جزء؟', en: 'Draw Block diagram of RF Signal Generator & Block Functions?' },
     answer: { 
       slides: [RFCircuit],
       ar: [
@@ -233,42 +245,42 @@ const questions: Question[] = [
       ]
     }
   },
-  // 12. Function of RF oscillator & Amplifier
+  // 13. Function of RF oscillator & Amplifier (Old ID: 12 -> New ID: 13)
   {
-    id: 12,
+    id: 13,
     category: 'theory',
-    question: { ar: 'وظيفة RF Oscillator و RF Amplifier', en: 'Function of RF Oscillator & RF Amplifier' },
+    question: { ar: 'ما هي وظيفة RF Oscillator و RF Amplifier؟', en: 'What is the function of RF Oscillator & RF Amplifier?' },
     answer: {
       ar: 'RF Oscillator: يولد إشارة تردد عالي تُستخدم كموجة حاملة. RF Amplifier: يقوم بتكبير قدرة إشارة RF لتناسب الإرسال أو الحمل.',
       en: 'RF Oscillator: Generates a high-frequency signal used as a carrier wave. RF Amplifier: Amplifies the RF signal power to drive the load or antenna.'
     }
   },
-  // 13. Thermal noise voltage
+  // 14. Thermal noise voltage (Old ID: 13 -> New ID: 14)
   {
-    id: 13,
+    id: 14,
     category: 'theory',
-    question: { ar: 'تعريف جهد الضوضاء الحرارية (Thermal Noise Voltage)', en: 'Define Thermal Noise Voltage' },
+    question: { ar: 'عرف جهد الضوضاء الحرارية (Thermal Noise Voltage)؟', en: 'Define Thermal Noise Voltage?' },
     answer: {
       ar: 'هو جهد ضوضاء عشوائي ينشأ نتيجة الاهتزاز الحراري للإلكترونات داخل المقاومات ويعتمد على درجة الحرارة.',
       en: 'A random noise voltage generated due to the thermal agitation of electrons in resistive components and depends on temperature.'
     }
   },
-  // 14. Generate Oscillation
+  // 15. Generate Oscillation (Old ID: 14 -> New ID: 15)
   {
-    id: 14,
+    id: 15,
     category: 'theory',
-    question: { ar: 'كيفية توليد الاهتزازات (How to Generate Oscillation)', en: 'How to Generate Oscillation' },
+    question: { ar: 'كيف يتم توليد الاهتزازات (How to Generate Oscillation)؟', en: 'How to Generate Oscillation?' },
     answer: { 
       ar: 'يجب تحقيق شروط Barkhausen:\n1. تغذية راجعة موجبة (Positive Feedback).\n2. كسب الحلقة المغلقة يساوي 1 (Loop Gain = 1).', 
       en: 'Barkhausen Criteria must be met:\n1. Positive Feedback.\n2. Closed Loop Gain = 1.',
       slides: [GenerateOscil]
     }
   },
-  // 15. Classification of sinusoidal oscillators
+  // 16. Classification of sinusoidal oscillators (Old ID: 15 -> New ID: 16)
   {
-    id: 15,
+    id: 16,
     category: 'theory',
-    question: { ar: 'تصنيف المذبذبات الجيبية (Classification of Sinusoidal Oscillators)', en: 'Classification of Sinusoidal Oscillators' },
+    question: { ar: 'صنف المذبذبات الجيبية (Classification of Sinusoidal Oscillators)؟', en: 'Classify Sinusoidal Oscillators?' },
     answer: {
       ar: [
         '1. RC Oscillators: للترددات المنخفضة (Audio). أمثلة: Wien Bridge, Phase Shift.',
@@ -282,22 +294,22 @@ const questions: Question[] = [
       ]
     }
   },
-  // 16. Colpitts oscillator
+  // 17. Colpitts oscillator (Old ID: 16 -> New ID: 17)
   {
-    id: 16,
+    id: 17,
     category: 'circuit',
-    question: { ar: 'مذبذب كولبتس (Colpitts): الرسم + الوظيفة + القانون', en: 'Colpitts Oscillator: Diagram + Function + Law' },
+    question: { ar: 'اشرح مذبذب كولبتس (Colpitts) موضحاً الرسم والقانون؟', en: 'Explain Colpitts Oscillator with Diagram & Law?' },
     answer: { slides: [collbits] },
     calculations: {
       ar: ['$$ F = \\frac{1}{2\\pi \\sqrt{L C_{eq}}} $$', '$$ C_{eq} = \\frac{C_1 C_2}{C_1 + C_2} $$'],
       en: ['$$ F = \\frac{1}{2\\pi \\sqrt{L C_{eq}}} $$', '$$ C_{eq} = \\frac{C_1 C_2}{C_1 + C_2} $$']
     }
   },
-  // 17. Hartley vs Colpitts
+  // 18. Hartley vs Colpitts (Old ID: 17 -> New ID: 18)
   {
-    id: 17,
+    id: 18,
     category: 'theory',
-    question: { ar: 'مقارنة بين Hartley و Colpitts', en: 'Compare Hartley & Colpitts' },
+    question: { ar: 'قارن بين مذبذب Hartley و Colpitts؟', en: 'Compare between Hartley & Colpitts Oscillators?' },
     answer: {
       ar: [
         'Hartley Oscillator: يستخدم ملفين (L1 , L2) ومكثف واحد. التغذية الراجعة تتم عن طريق مقسم حثي (Inductive Divider). أقل استقرارًا من كولبتس.',
@@ -310,39 +322,40 @@ const questions: Question[] = [
       slides : [colbitAndHartly]
     }
   },
-  // 18. TV Oscilloscope
-  {
-    id: 18,
-    category: 'circuit',
-    question: { ar: 'رسمة بسيطة للأوسيلوسكوب التلفزيوني ( Oscilloscope)', en: 'Simple Diagram of  Oscilloscope' },
-    answer: { slides: [crtDiagram] }
-  },
-  // 19. Single vs Dual Trace
+  // 19. TV Oscilloscope (Old ID: 18 -> New ID: 19)
   {
     id: 19,
     category: 'circuit',
-    question: { ar: 'الفرق بين Single Trace و Dual Trace (مع الرسم)', en: 'Difference between Single & Dual Trace (with diagram)' },
+    question: { ar: 'ارسم مخطط بسيط للأوسيلوسكوب التلفزيوني (TV Oscilloscope)؟', en: 'Draw simple diagram of TV Oscilloscope?' },
+    answer: { slides: [crtDiagram] }
+  },
+  // 20. Single vs Dual Trace (Old ID: 19 -> New ID: 20)
+  {
+    id: 20,
+    category: 'circuit',
+    question: { ar: 'ما الفرق بين Single Trace و Dual Trace (مع الرسم)؟', en: 'What is the difference between Single & Dual Trace (with diagram)?' },
     answer: {
       slides: [single,Dupel],
       ar: 'Single Trace: شعاع إلكتروني واحد، قناة واحدة. Dual Trace: شعاع واحد يتم تبديله بسرعة (Multiplexed) بين قناتين لعرض إشارتين معاً.',
       en: 'Single Trace: One beam, one channel. Dual Trace: One beam multiplexed between two channels to display two signals.'
     }
   },
-  // 20. DSO
+  // 21. DSO (Old ID: 20 -> New ID: 21)
   {
-    id: 20,
+    id: 21,
     category: 'theory',
-    question: { ar: 'الأوسيلوسكوب الرقمي (Digital Storage Oscilloscope - DSO)', en: 'Digital Storage Oscilloscope (DSO)' },
+    question: { ar: 'ما هو الأوسيلوسكوب الرقمي (Digital Storage Oscilloscope - DSO)؟', en: 'What is Digital Storage Oscilloscope (DSO)?' },
     answer: { 
+      slides : [Storage], 
       ar: 'جهاز يحول الإشارة التناظرية إلى رقمية، يخزنها في الذاكرة، ثم يعيد بناءها للعرض. يسمح بتحليل الإشارات وتخزينها.', 
       en: 'Converts analog signals to digital, stores them in memory, then reconstructs them for display. Allows signal analysis and storage.' 
     }
   },
-  // 21. Basic Sample Store
+  // 22. Basic Sample Store (Old ID: 21 -> New ID: 22)
   {
-    id: 21,
+    id: 22,
     category: 'theory',
-    question: { ar: 'المراحل الأساسية لتخزين العينة (Basic Sample Store)', en: 'Basic Sample Store Stages' },
+    question: { ar: 'ما هي المراحل الأساسية لتخزين العينة (Basic Sample Store)؟', en: 'What are the Basic Sample Store Stages?' },
     answer: { 
       ar: 'نظام أساسي لجهاز راسم الذبذبات الرقمي (DSO) لعرض شكل موجة مخزن. يقوم المحول الرقمي إلى التناظري (DAC) بتحويل العينات الرقمية الموجودة في الذاكرة إلى صورة تناظرية لتطبيقها على ألواح الانحراف الرأسي. يتم إنتاج شكل موجة نقطي عندما يتم دمج العينات مع القاعدة الزمنية لشكل الموجة السلمي ونبضات إلغاء الإطفاء', 
       en: 'Basic DSO system for displaying a stored waveform. A digital-to-analog converter (DAC) converts the digital samples in the memory into analog form for application to the vertical deflection plates. A dot waveform is produced when the samples are combined with the staircase waveform time base and the unblanking pulses.',
@@ -350,22 +363,22 @@ const questions: Question[] = [
     }
 
   },
-  // 22. Spectrum Analyzer Types
+  // 23. Spectrum Analyzer Types (Old ID: 22 -> New ID: 23)
   {
-    id: 22,
+    id: 23,
     category: 'theory',
-    question: { ar: 'أنواع محلل الطيف (Types of Spectrum Analyzer)', en: 'Types of Spectrum Analyzer' },
+    question: { ar: 'اذكر أنواع محلل الطيف (Types of Spectrum Analyzer)؟', en: 'List Types of Spectrum Analyzer?' },
     answer: { 
       ar: '1. Swept-Tuned Spectrum Analyzer.\n2. Real-Time (FFT) Spectrum Analyzer.', 
       en: '1. Swept-Tuned Spectrum Analyzer.\n2. Real-Time (FFT) Spectrum Analyzer.', 
       slides: [spectrum1 ,spectrum2]
     }
   },
-  // 23. Operation of Spectrum Analyzer
+  // 24. Operation of Spectrum Analyzer (Old ID: 23 -> New ID: 24)
   {
-    id: 23,
+    id: 24,
     category: 'theory',
-    question: { ar: 'طريقة عمل محلل الطيف (Operation of Spectrum Analyzer)', en: 'Operation of Spectrum Analyzer' },
+    question: { ar: 'اشرح طريقة عمل محلل الطيف (Operation of Spectrum Analyzer)؟', en: 'Explain Operation of Spectrum Analyzer?' },
     answer: {
       ar: [
         '1. يعتمد محلل الطيف على مذبذب محلي (Local Oscillator) من نوع VCO يتم التحكم في تردده بواسطة جهد من مولد المسح (Sweep Generator).',
@@ -390,11 +403,11 @@ const questions: Question[] = [
       slides: [operationOfSpectrum]
     }
   },
-  // 24. Sensor, Transducer, Actuator
+  // 25. Sensor, Transducer, Actuator (Old ID: 24 -> New ID: 25)
   {
-    id: 24,
+    id: 25,
     category: 'theory',
-    question: { ar: 'تعريف Sensor, Transducer, Actuator', en: 'Define Sensor, Transducer, Actuator' },
+    question: { ar: 'عرف كل من: Sensor, Transducer, Actuator؟', en: 'Define: Sensor, Transducer, Actuator?' },
     answer: {
       ar: [
         'Sensor: هو جهاز يكتشف أي تغير في خاصية فيزيائية مثل الحرارة أو الضغط أو الضوء ويحوّلها إلى إشارة يمكن قياسها أو تسجيلها.\n',
@@ -408,23 +421,23 @@ const questions: Question[] = [
       ]
     }
   },
-  // 25. Forms of Energy
+  // 26. Forms of Energy (Old ID: 25 -> New ID: 26)
   {
-    id: 25,
+    id: 26,
     category: 'theory',
-    question: { ar: 'الأشكال الرئيسية للطاقة (Main Forms of Energy)', en: 'Main Forms of Energy' },
+    question: { ar: 'اذكر الأشكال الرئيسية للطاقة (Main Forms of Energy)؟', en: 'What are the Main Forms of Energy?' },
     answer: { 
       ar: 'ميكانيكية، كهربية، حرارية، مغناطيسية، كيميائية، ضوئية.', 
       en: 'Mechanical, Electrical, Thermal, Magnetic, Chemical, Optical.' 
     }
   },
-  // 26. Types of Transducers
+  // 27. Types of Transducers (Old ID: 26 -> New ID: 27)
   {
-    id: 26,
+    id: 27,
     category: 'theory',
     question: { 
-        ar: 'تفريعة أنواع المحولات', 
-        en: 'Detailed Classification of Transducers ' 
+        ar: 'اذكر تصنيف أنواع المحولات (Classification of Transducers)؟', 
+        en: 'Detailed Classification of Transducers?' 
     },
     answer: { 
         ar: [
@@ -453,11 +466,11 @@ const questions: Question[] = [
         ]
     }
 },
-  // 27. Transducers for length
+  // 28. Transducers for length (Old ID: 27 -> New ID: 28)
   {
-    id: 27,
+    id: 28,
     category: 'theory',
-    question: { ar: 'محولات قياس الطول والإزاحة (Transducers for Length/Displacement)', en: 'Transducers for Length/Displacement' },
+    question: { ar: 'تكلم عن محولات قياس الطول والإزاحة (Transducers for Length)؟', en: 'Discuss Transducers for Length/Displacement?' },
     answer: {
       ar: [
         '1. Electrical displacement transducers: أهمها Potentiometer ويُستخدم لقياس الإزاحة الخطية.',
@@ -480,13 +493,13 @@ const questions: Question[] = [
       ]
     }
   },
-  // 28. Thermometer vs Thrmometer & Thermocouples (Updated with Quartz Note)
+  // 29. Thermometer vs Thrmometer & Thermocouples (Old ID: 28 -> New ID: 29)
   {
-    id: 28,
+    id: 29,
     category: 'theory',
     question: { 
-      ar: 'الفرق بين الترمومتر والمزدوج الحراري (وملاحظة الكوارتز)', 
-      en: 'Difference between Thermometer & Thermocouple (with Quartz Note)' 
+      ar: 'ما الفرق بين الترمومتر والمزدوج الحراري (Thermometer vs Thermocouple)؟', 
+      en: 'What is the Difference between Thermometer & Thermocouple?' 
     },
     answer: { 
       ar: [
@@ -502,15 +515,15 @@ const questions: Question[] = [
       
     }
   },
-  // 29-36. Examples
-  { id: 29, category: 'calculation', question: { en: 'Example 1', ar: 'المثال 1' }, answer: { slides: [calc1] } },
-  { id: 30, category: 'calculation', question: { en: 'Example 2', ar: 'المثال 2' }, answer: { slides: [calc2] } },
-  { id: 31, category: 'calculation', question: { en: 'Example 3', ar: 'المثال 3' }, answer: { slides: [calc3, calc4] } },
-  { id: 32, category: 'calculation', question: { en: 'Example 4', ar: 'المثال 4' }, answer: { slides: [calc5] } },
-  { id: 33, category: 'calculation', question: { en: 'Example 5', ar: 'المثال 5' }, answer: { slides: [calc6, calc7] } },
-  { id: 34, category: 'calculation', question: { en: 'Example 6', ar: 'المثال 6' }, answer: { slides: [calc8, calc9, calc10, calc13] } },
-  { id: 35, category: 'calculation', question: { en: 'Example 7', ar: 'المثال 7' }, answer: { slides: [calc17, calc18] } },
-  { id: 36, category: 'calculation', question: { en: 'Example 8', ar: 'المثال 8' }, answer: { slides: [calc19, calc20] } },
+  // 30-37. Examples (Shifted by 1)
+  { id: 30, category: 'calculation', question: { en: 'Example 1', ar: 'مثال 1' }, answer: { slides: [calc1] } },
+  { id: 31, category: 'calculation', question: { en: 'Example 2', ar: 'مثال 2' }, answer: { slides: [calc2] } },
+  { id: 32, category: 'calculation', question: { en: 'Example 3', ar: 'مثال 3' }, answer: { slides: [calc3, calc4] } },
+  { id: 33, category: 'calculation', question: { en: 'Example 4', ar: 'مثال 4' }, answer: { slides: [calc5] } },
+  { id: 34, category: 'calculation', question: { en: 'Example 5', ar: 'مثال 5' }, answer: { slides: [calc6, calc7] } },
+  { id: 35, category: 'calculation', question: { en: 'Example 6', ar: 'مثال 6' }, answer: { slides: [calc8, calc9, calc10, calc13] } },
+  { id: 36, category: 'calculation', question: { en: 'Example 7', ar: 'مثال 7' }, answer: { slides: [calc17, calc18] } },
+  { id: 37, category: 'calculation', question: { en: 'Example 8', ar: 'مثال 8' }, answer: { slides: [calc19, calc20] } },
 ];
 
 const ExamsPage = () => {
@@ -519,7 +532,7 @@ const ExamsPage = () => {
   const [filter, setFilter] = useState<'all' | 'theory' | 'calculation' | 'circuit'>('all');
   const [slideIndex, setSlideIndex] = useState<{ [key: number]: number }>({});
   const [zoomedImage, setZoomedImage] = useState<{ qId: number; slideIndex: number } | null>(null);
-  
+   
   // Touch state
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
@@ -808,7 +821,7 @@ const ExamsPage = () => {
                           </div>
                         )}
 
-                       {/* 4. Slides (Images/Diagrams) */}
+                        {/* 4. Slides (Images/Diagrams) */}
                         {hasSlides && (
                           <div className="mt-4">
                             <div 
